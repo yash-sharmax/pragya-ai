@@ -1,0 +1,44 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+client_secret*.json
+*.pem
+*.key
+*.cert
+*.crt
+
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing & Coverage
+/coverage
+
+# Next.js build output
+/.next/
+/out/
+/build
+/dist
+/.vercel/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local Supabase temporary files
+.supabase/
+supabase/.temp/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
