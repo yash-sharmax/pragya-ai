@@ -236,7 +236,7 @@ function LoginContent() {
                 <span>Pragya Veda</span>
               </div>
               <p className="text-[11px] text-stone-300 leading-snug">
-                Natural sciences, astronomy, cosmology, and Vedic epistemology.
+                Physics, astronomy, natural sciences, and ancient scientific thought.
               </p>
             </div>
 
@@ -246,7 +246,7 @@ function LoginContent() {
                 <span>Pragya Neeti</span>
               </div>
               <p className="text-[11px] text-stone-300 leading-snug">
-                Leadership, Arthashastra statecraft, ethics, and strategic counsel.
+                Corporate management, entrepreneurship, decision-making & ethics.
               </p>
             </div>
 
@@ -256,7 +256,7 @@ function LoginContent() {
                 <span>Pragya Ganita</span>
               </div>
               <p className="text-[11px] text-stone-300 leading-snug">
-                Vedic Sutras first, pure mathematics, algorithms, and proofs.
+                Algorithms, Vedic maths, number systems & computational logic.
               </p>
             </div>
 
@@ -266,7 +266,7 @@ function LoginContent() {
                 <span>Pragya Sarathi</span>
               </div>
               <p className="text-[11px] text-stone-300 leading-snug">
-                Mindfulness, emotional resilience, CBT principles, and self-reflection.
+                Mindfulness, emotional balance, CBT concepts & personal growth.
               </p>
             </div>
           </div>

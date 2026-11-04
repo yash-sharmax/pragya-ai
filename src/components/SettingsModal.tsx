@@ -30,6 +30,7 @@ export function SettingsModal({ open, onClose, settings, onSaveSettings }: Setti
   // Sync form state when modal opens or settings update
   useEffect(() => {
     setForm(settings);
+    if (open) setSavedSuccess(false);
   }, [settings, open]);
 
   // Handle Escape key to close
@@ -50,10 +51,12 @@ export function SettingsModal({ open, onClose, settings, onSaveSettings }: Setti
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     setSaving(true);
+    setSavedSuccess(false);
     try {
       await onSaveSettings(form);
+      // Keep the confirmation visible until the modal is closed,
+      // so the user cannot miss that the save went through.
       setSavedSuccess(true);
-      setTimeout(() => setSavedSuccess(false), 2200);
     } catch (err) {
       console.error("Save settings error:", err);
     } finally {
@@ -214,6 +217,16 @@ export function SettingsModal({ open, onClose, settings, onSaveSettings }: Setti
               </p>
             )}
           </div>
+
+          {savedSuccess && (
+            <p
+              role="status"
+              className="flex items-center gap-1.5 text-[12px] font-medium text-emerald-700 dark:text-emerald-300 bg-emerald-500/10 border border-emerald-500/25 rounded-lg px-3 py-2"
+            >
+              <Check className="w-4 h-4" />
+              Preferences saved successfully.
+            </p>
+          )}
 
           {/* Actions */}
           <div className="pt-2 flex items-center justify-between">

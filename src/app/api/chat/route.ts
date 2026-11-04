@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { PersonaId } from "@/lib/personas";
 import { routeAiRequest, ChatMessageInput } from "@/lib/ai/router";
 import { generateConversationTitle } from "@/lib/ai/title";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 export async function POST(request: Request) {
   const startTime = Date.now();
@@ -16,6 +17,15 @@ export async function POST(request: Request) {
 
   if (authError || !user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  // Rate limit: at most 20 chat requests per minute per user.
+  // Protects the Gemini/Groq quota from loops and abuse.
+  if (!checkRateLimit(`chat:${user.id}`, 20, 60_000)) {
+    return NextResponse.json(
+      { error: "Too many requests. Please wait a few seconds and try again." },
+      { status: 429 }
+    );
   }
 
   try {

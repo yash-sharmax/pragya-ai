@@ -289,9 +289,15 @@ export function ShareModal({
               <p>
                 <strong>Security note:</strong> Public links are unguessable and allow anyone to read this conversation, citations, LaTeX equations, and sources without needing to log in.
               </p>
-              <p>
-                You can revoke access at any time by clicking <em>Revoke Link</em> above, which immediately invalidates the URL.
-              </p>
+              {isPublic ? (
+                <p>
+                  You can revoke access at any time by clicking <em>Revoke Link</em> above, which immediately invalidates the URL.
+                </p>
+              ) : (
+                <p>
+                  This conversation is currently <strong>private</strong> — only you can see it. A public link exists only after you click <em>Create Public Link</em>.
+                </p>
+              )}
             </div>
           </div>
         )}

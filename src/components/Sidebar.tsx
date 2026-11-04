@@ -30,7 +30,7 @@ interface SidebarProps {
   currentConversationId: string | null;
   onSelectConversation: (id: string) => void;
   onNewChat: () => void;
-  onRenameConversation: (id: string, newTitle: string) => Promise<void>;
+  onRenameConversation: (id: string, newTitle: string) => Promise<boolean>;
   onDeleteConversation: (id: string) => Promise<void>;
   onOpenSettings: () => void;
   onOpenSearch: () => void;
@@ -90,6 +90,8 @@ export function Sidebar({
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editTitle, setEditTitle] = useState("");
   const [savingRenameId, setSavingRenameId] = useState<string | null>(null);
+  const [renameErrorId, setRenameErrorId] = useState<string | null>(null);
+  const [signingOut, setSigningOut] = useState(false);
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [isDeletingLoading, setIsDeletingLoading] = useState(false);
 
@@ -99,26 +101,38 @@ export function Sidebar({
     setDeletingId(null);
     setEditingId(conv.id);
     setEditTitle(conv.title);
+    setRenameErrorId(null);
   };
 
   const saveRename = async (id: string, e: React.MouseEvent) => {
     e.stopPropagation();
     e.preventDefault();
-    if (editTitle.trim()) {
-      setSavingRenameId(id);
-      try {
-        await onRenameConversation(id, editTitle.trim());
-      } finally {
-        setSavingRenameId(null);
-      }
+    if (!editTitle.trim() || savingRenameId === id) {
+      if (!editTitle.trim()) setEditingId(null);
+      return;
     }
-    setEditingId(null);
+    setSavingRenameId(id);
+    setRenameErrorId(null);
+    try {
+      const ok = await onRenameConversation(id, editTitle.trim());
+      if (ok) {
+        setEditingId(null);
+      } else {
+        // Keep the editor open so the user sees the save did not go through
+        setRenameErrorId(id);
+      }
+    } catch {
+      setRenameErrorId(id);
+    } finally {
+      setSavingRenameId(null);
+    }
   };
 
   const cancelRename = (e: React.MouseEvent) => {
     e.stopPropagation();
     e.preventDefault();
     setEditingId(null);
+    setRenameErrorId(null);
   };
 
   const confirmDelete = async (id: string, e: React.MouseEvent) => {
@@ -287,22 +301,24 @@ export function Sidebar({
                                 type="button"
                                 onClick={(e) => saveRename(conv.id, e)}
                                 disabled={savingRenameId === conv.id}
-                                className="p-1 text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-950 rounded cursor-pointer"
+                                className="p-1.5 text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-950 rounded cursor-pointer disabled:opacity-60"
                                 title="Save title"
+                                aria-label="Save title"
                               >
                                 {savingRenameId === conv.id ? (
-                                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                                  <Loader2 className="w-4 h-4 animate-spin" />
                                 ) : (
-                                  <Check className="w-3.5 h-3.5" />
+                                  <Check className="w-4 h-4" />
                                 )}
                               </button>
                               <button
                                 type="button"
                                 onClick={cancelRename}
-                                className="p-1 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded cursor-pointer"
+                                className="p-1.5 text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded cursor-pointer"
                                 title="Cancel"
+                                aria-label="Cancel rename"
                               >
-                                <X className="w-3.5 h-3.5" />
+                                <X className="w-4 h-4" />
                               </button>
                             </>
                           ) : isDeleting ? (
@@ -355,6 +371,11 @@ export function Sidebar({
                             </div>
                           )}
                         </div>
+                        {isEditing && renameErrorId === conv.id && (
+                          <span className="absolute -bottom-1.5 right-2 text-[9px] font-medium text-rose-500 bg-white dark:bg-slate-900 px-1 rounded">
+                            Save failed — try again
+                          </span>
+                        )}
                       </div>
                     );
                   })}
@@ -393,11 +414,21 @@ export function Sidebar({
 
               <button
                 type="button"
-                onClick={onSignOut}
-                title="Sign Out"
-                className="p-1.5 rounded-lg text-slate-500 hover:text-rose-500 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                onClick={() => {
+                  if (signingOut) return;
+                  setSigningOut(true);
+                  void onSignOut();
+                }}
+                disabled={signingOut}
+                title={signingOut ? "Signing out..." : "Sign Out"}
+                aria-label="Sign Out"
+                className="p-1.5 rounded-lg text-slate-500 hover:text-rose-500 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors cursor-pointer disabled:opacity-60"
               >
-                <LogOut className="w-4 h-4" />
+                {signingOut ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <LogOut className="w-4 h-4" />
+                )}
               </button>
             </div>
           </div>

@@ -1,269 +1,174 @@
 <div align="center">
 
-# 🪔 Pragya AI (प्रज्ञा)
-### *Synthesizing the Indian Knowledge System (IKS) with Modern Computational Science*
+# 🪔 Pragya AI · प्रज्ञा
 
+### *Ancient Indian Wisdom, Answered by Modern AI*
+
+**A multilingual AI workspace that bridges the Indian Knowledge Systems (IKS) with modern science —**
+**ask in English, Hindi (हिन्दी) or Hinglish, and learn from four specialised knowledge personas.**
+
+<br/>
+
+[![Live Demo](https://img.shields.io/badge/🔴_Live_Demo-pragyaai.yashx.xyz-amber?style=for-the-badge)](https://pragyaai.yashx.xyz)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com/)
-[![KaTeX](https://img.shields.io/badge/KaTeX-LaTeX%20Math-005B94?style=for-the-badge)](https://katex.org/)
 [![License](https://img.shields.io/badge/License-MIT-amber?style=for-the-badge)](LICENSE)
 
 <br/>
 
-**Pragya AI** is a full-stack, multilingual, multimodal artificial intelligence platform designed to bridge classical Indian philosophical and scientific heritage with state-of-the-art computational intelligence.
-
-[Explore Architecture](#-architecture--technology-stack) • [Knowledge Personas](#-the-four-knowledge-personas) • [Core Features](#-key-features) • [Getting Started](#-getting-started) • [Deployment](#-deployment-guide)
+[🚀 Try the Live App](https://pragyaai.yashx.xyz) · [🏛️ Meet the Personas](#️-the-four-knowledge-personas) · [✨ Features](#-features) · [⚡ Quick Start](#-quick-start) · [🛡️ Security](#️-security--privacy)
 
 </div>
 
 ---
 
-## 📖 Vision & Philosophy
+## 🌏 Why Pragya AI?
 
-For millennia, the Indian subcontinent cultivated rigorous epistemic frameworks—from Kanada’s atomic *Vaisheshika* theories and Gautama’s *Nyaya* syllogisms to Aryabhata’s planetary kinematics and Kautilya’s statecraft economics. 
+For millennia, India cultivated rigorous systems of knowledge — Kanada's atomic theory, Aryabhata's astronomy, Kautilya's statecraft, Bharati Krishna Tirtha's mathematical sutras. Most AI tools flatten all of this into generic answers. **Pragya AI is built differently:**
 
-**Pragya AI** brings these foundations to life in an exhibition-grade research workspace:
-- **Epistemic Rigor:** Clearly demarcating experimentally verified modern science, theoretical hypotheses, and classical philosophical intuitions—never confusing mythology with empirical proof.
-- **Multilingual Intelligence:** Native dynamic language matching across **English**, **Hindi (Devanagari)**, and fluent conversational **Hinglish**.
-- **Classical Aesthetics:** An archival parchment manuscript design inspired by ancient folios, accompanied by dynamic calligraphy animations and high-contrast dark mode support.
+- 📜 **Rooted, not generic** — answers draw on classical texts *and* verified modern science, and clearly separate the two.
+- 🗣️ **Truly multilingual** — the AI detects whether you wrote in English, Hindi or Hinglish, and replies in the same language and script.
+- 🎓 **Exhibition-validated** — presented at a university IKS exhibition, where it helped a pharmacy student research her own Ayurveda-based project better than generic AI tools could.
 
 ---
 
 ## 🏛️ The Four Knowledge Personas
 
-Pragya AI orchestrates four distinct specialized intelligence personas, each configured with domain-specific system prompts, reasoning protocols, and safety boundaries:
-
-| Persona | Sanskrit Name | Domain & Scope | Foundational Texts & Frameworks |
+| Persona | Domain | Ask about… | Powered by |
 | :--- | :--- | :--- | :--- |
-| **Pragya Veda** | **प्रज्ञा वेद** | Natural Sciences, Astronomy, Cosmology, Epistemology | *Shad-Darshanas* (Nyaya, Vaisheshika, Samkhya), *Aryabhatiya*, *Surya Siddhanta*, *Charaka & Sushruta Samhitas*. |
-| **Pragya Neeti** | **प्रज्ञा नीति** | Business Strategy, Leadership, Governance, Ethics | *Arthashastra* (*Saptanga* governance theory, *Shadgunya* market positioning, *Anvikshiki* logic), *Vidura Niti*, *Panchatantra*. |
-| **Pragya Ganita** | **प्रज्ञा गणित** | Pure Mathematics, Vedic Math First, Computer Science | *Vedic Mathematics Sutras* (Swami Bharati Krishna Tirtha: *Nikhilam*, *Urdhva-Tiryagbhyam*, *Ekadhikena Purvena*), Big-O analysis, modern calculus fallback. |
-| **Pragya Sarathi** | **प्रज्ञा सारथि** | Mindfulness, Well-being, Psychological Resilience | *Patanjali Yoga Sutras* (*Chitta Vritti Nirodha*, *Pratipaksha Bhavana*), *Bhagavad Gita* (*Sthitaprajna*, *Nishkama Karma*), modern CBT/ACT principles. |
+| 🔭 **Pragya Veda** *(प्रज्ञा वेद)* | Physics, Astronomy, Natural Sciences & Ancient Scientific Thought | Nasadiya Sukta vs the Big Bang, Vaisheshika atomism, Surya Siddhanta | Gemini |
+| ♟️ **Pragya Neeti** *(प्रज्ञा नीति)* | Corporate Management, Entrepreneurship, Decision-Making & Ethics | Arthashastra's Saptanga for team leaders, strategy, governance | Gemini |
+| 🧮 **Pragya Ganita** *(प्रज्ञा गणित)* | Algorithms, Vedic Maths, Number Systems & Computational Logic | Nikhilam sutra multiplications, proofs, Big-O analysis | Groq |
+| 🧘 **Pragya Sarathi** *(प्रज्ञा सारथि)* | Mindfulness, Emotional Balance, CBT Concepts & Personal Growth | Exam stress, Yoga Sutras, Gita's Sthitaprajna | Gemini |
 
 > [!IMPORTANT]
-> **Crisis Safety Boundaries:** *Pragya Sarathi* operates strictly as an educational and reflective mentor. If acute distress or crisis is detected, it immediately provides national 24/7 mental health emergency helplines (Tele-MANAS `14416`, KIRAN `1800-599-0019`, and international `988` / `111`).
+> **Safety boundary:** Pragya Sarathi is an educational, reflective mentor — not a therapist. On detecting acute distress, it surfaces national 24×7 helplines (Tele-MANAS `14416`, KIRAN `1800-599-0019`).
 
 ---
 
-## ✨ Key Features
+## ✨ Features
 
-### 📜 Ancient Manuscript Aesthetic & Kalam Writing Animation
-- **Archival Surfaces:** Custom `.manuscript-surface` CSS utilities rendering warm aged parchment gradients (`#faf5eb` to `#f4ede0`) in light mode and deep nocturnal archival tones (`#17120d` to `#120e0a`) in dark mode.
-- **Kalam Writing Indicator:** A custom animated reed pen (*Traditional Kalam*) oscillates dynamically during Server-Sent Event (SSE) token generation.
-- **Truthful Thinking Activity:** Live visual indicators detailing current pipeline phases: `Searching web sources`, `Reading documents`, `Synthesizing knowledge`, and `Writing response`, accompanied by an elapsed time counter.
-
-### 📐 Advanced LaTeX & KaTeX Mathematical Engine
-- Seamlessly parses inline `$x^2 + y^2 = z^2$` and display math `$$\int_0^\infty e^{-x} dx = 1$$`.
-- **KaTeX `.fbox` Horizontal Anchor:** Overrides KaTeX strut tables to render boxed multi-line Vedic mathematics derivations without border truncation or single-line collapse.
-- Dedicated "Copy LaTeX" and "Copy Code" interactive controls with live clipboard feedback.
-
-### 📄 Multi-Format Document Ingestion
-- Upload and analyze **PDF**, **DOCX**, and **TXT** files (up to 10 MB per file).
-- Server-side text extraction powered by `pdf-parse` and `mammoth`.
-- **Scanned Document Resilience:** Automatically identifies image-only or scanned PDFs (`< 20` characters of extractable text) and displays an informative notice without crashing.
-
-### 🔗 Secure Public Chat Sharing
-- Publish any research conversation to an unauthenticated public link (`/share/[token]`).
-- Cryptographically secure 64-character share tokens (`crypto.randomBytes(32)`).
-- **PostgREST RLS Hardening:** Public data is accessed strictly through a PostgreSQL `SECURITY DEFINER` function (`get_public_shared_conversation`), preventing anonymous table enumeration or metadata scraping.
-- Generates clean, read-only public views that omit private storage paths and owner identifiers.
-
-### 🔐 Dual Authentication & Password Recovery
-- **Google OAuth:** One-click single sign-on with Google Cloud identity.
-- **Email/Password:** Full sign-up with password confirmation, live strength validation, and session management.
-- **Password Recovery:** Complete `/forgot-password` (privacy-preserving email link dispatch) and `/reset-password` (secure session verification and password updates).
-
-### 🔍 Live Web Source Grounding
-- Real-time search integration with relevance filtering.
-- High-contrast citations displayed at the bottom of assistant responses with external link previews.
+| | |
+| :--- | :--- |
+| 💬 **Chat Experience** | Streaming answers with a traditional *Kalam* (reed-pen) writing animation, live pipeline status (*Searching sources → Reading → Writing*), one-click starter prompts, retry, and copy-response / copy-LaTeX controls |
+| 🔤 **Language Intelligence** | Automatic English / Hindi / Hinglish detection on every message; Sanskrit verses preserved in Devanagari with translations |
+| 📐 **Math Engine** | Full LaTeX rendering via KaTeX — inline `$…$` and display `$$…$$` — including boxed, multi-line Vedic maths derivations |
+| 📎 **Document Chat** | Attach PDF, DOCX, TXT or images (up to 10 MB); text is extracted server-side and grounded into the conversation |
+| 🗂️ **Workspace** | Auto-titled conversation history (grouped Today / Yesterday), full-text search with message snippets, rename, two-step delete, per-chat public share links with revocation |
+| ⚙️ **Personalisation** | Language, Light / Dark / System theme, default persona, and a chat-history saving toggle — all in one Settings panel |
+| 🎨 **Manuscript Design** | A warm archival-parchment aesthetic inspired by ancient folios, with a deep nocturnal dark mode |
 
 ---
 
-## 🛠️ Architecture & Technology Stack
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+| :--- | :--- |
+| **Framework** | Next.js 14 (App Router) · React 18 · TypeScript |
+| **Styling** | Tailwind CSS · Lucide icons |
+| **Backend & Auth** | Supabase — PostgreSQL, SSR Auth (Email + Google), Row-Level Security |
+| **AI Providers** | Google Gemini *(Veda, Neeti, Sarathi)* · Groq *(Ganita)*, routed per persona |
+| **Documents & Math** | `pdf-parse` · `mammoth` · KaTeX (`remark-math`, `rehype-katex`) |
+| **Grounding** | Optional live web search (Tavily) for source-backed answers |
 
 ```mermaid
-graph TD
-    Client["Client Browser (Next.js 14 / Tailwind / KaTeX)"]
-    MW["Next.js Edge Middleware (Auth & Session Guard)"]
-    API["Next.js Route Handlers (/api/chat, /api/share, /api/upload)"]
-    SupabaseAuth["Supabase Auth (Google OAuth & Email/Password)"]
-    Postgres[("Supabase PostgreSQL (RLS & SECURITY DEFINER Functions)")]
-    Storage["Supabase Storage (user-uploads Private Bucket)"]
-    AI["AI Engine Router (Gemini 1.5 Pro & Groq LLaMA 3.3)"]
-    Search["Search Grounding Engine"]
-
-    Client --> MW
-    MW --> API
-    API --> SupabaseAuth
-    API --> Postgres
-    API --> Storage
-    API --> AI
-    AI --> Search
-```
-
-- **Frontend Framework:** Next.js 14 (App Router) + React 18
-- **Styling & Icons:** Tailwind CSS, Shadcn UI primitives, Lucide React
-- **Typography & Math:** KaTeX 0.19, `remark-math`, `rehype-katex`
-- **Database & Backend:** Supabase PostgreSQL with strict Row-Level Security (RLS)
-- **Authentication:** Supabase SSR Auth (`@supabase/ssr`)
-- **Document Processing:** `pdf-parse`, `mammoth`
-- **AI Intelligence Engines:** Google Gemini 1.5 Pro/Flash & Groq LLaMA 3.3 70B
-
----
-
-## 📁 Repository Structure
-
-```
-├── public/                     # Static assets, icons, and favicons
-│   ├── favicon.ico
-│   └── icon.svg                # Sacred flame vector icon
-├── src/
-│   ├── app/                    # Next.js App Router routes
-│   │   ├── api/                # API Route Handlers
-│   │   │   ├── chat/           # Streaming chat endpoint & context builder
-│   │   │   ├── conversations/  # Conversation management & share controls
-│   │   │   ├── share/[token]/  # Public read-only share endpoint
-│   │   │   └── upload/         # Secure document upload & text extraction
-│   │   ├── auth/callback/      # OAuth & password reset PKCE callback
-│   │   ├── forgot-password/    # Account recovery request page
-│   │   ├── reset-password/     # Secure password reset page
-│   │   ├── login/              # Tabbed authentication (Google + Email/Password)
-│   │   ├── share/[token]/      # Public shared chat viewer
-│   │   ├── globals.css         # Manuscript themes, KaTeX overrides, Kalam animations
-│   │   ├── layout.tsx          # Root layout & font configurations
-│   │   └── page.tsx            # Main chat interface
-│   ├── components/             # Reusable UI components
-│   │   ├── BrandLogo.tsx       # Vector flame & mandala brand identity
-│   │   ├── ChatDashboard.tsx   # Core chat state machine & history sync
-│   │   ├── ChatWorkspace.tsx   # Message stream, composer, and empty state
-│   │   ├── MarkdownRenderer.tsx# KaTeX math & syntax-highlighted code renderer
-│   │   ├── MessageBubble.tsx   # User & assistant bubbles with Kalam pen animation
-│   │   ├── PersonaSelector.tsx # 4-persona switcher
-│   │   ├── ShareModal.tsx      # Public link generator & revocation dialog
-│   │   ├── Sidebar.tsx         # Conversation history & account drawer
-│   │   └── SourcesList.tsx     # High-contrast live source citations
-│   └── lib/                    # Core libraries and utilities
-│       ├── ai/                 # AI client routers (Gemini, Groq)
-│       ├── documents/          # Document text extraction (PDF, DOCX, TXT)
-│       ├── personas/           # Persona prompt loader & language detector
-│       ├── sources/            # Search grounding & relevance filters
-│       └── supabase/           # Server, client, and middleware Supabase wrappers
-├── supabase/
-│   └── migrations/             # Idempotent forward-only PostgreSQL migrations
-│       ├── 20261101_init_schema.sql
-│       ├── 20261102_add_sources_and_response_time.sql
-│       ├── 20261103_add_title_customized.sql
-│       ├── 20261104_add_public_sharing.sql
-│       └── 20261105_fix_public_share_and_message_security.sql
-├── pragya-ganit-prompt.txt     # System prompt: Mathematics & Vedic Sutras
-├── pragya-niti-prompt.txt      # System prompt: Arthashastra Strategy & Ethics
-├── pragya-sarathi-prompt.txt   # System prompt: Mindfulness & Well-being
-├── pragya-veda-prompt.txt      # System prompt: Natural Sciences & Epistemology
-├── .env.example                # Safe environment variable template
-├── package.json
-└── tsconfig.json
+graph LR
+    A[Browser<br/>Next.js · Tailwind · KaTeX] --> B[Edge Middleware<br/>Session Guard]
+    B --> C[API Routes<br/>chat · upload · share · search]
+    C --> D[(Supabase PostgreSQL<br/>RLS on every table)]
+    C --> E[AI Router<br/>language detection]
+    E --> F[Gemini]
+    E --> G[Groq]
+    E --> H[Web Search Grounding]
 ```
 
 ---
 
-## 🚀 Getting Started
+## ⚡ Quick Start
 
-### 1. Prerequisites
-- **Node.js:** v18.17.0 or higher
-- **npm** or **pnpm**
-- A **Supabase** account with a new or existing project.
+**Prerequisites:** Node.js 18.17+ and a free [Supabase](https://supabase.com) project.
 
-### 2. Clone the Repository
 ```bash
-git clone https://github.com/yash-sharmax/pragya-ai.git
+# 1. Clone & install
+git clone https://github.com/pimatrix/pragya-ai.git
 cd pragya-ai
-```
-
-### 3. Install Dependencies
-```bash
 npm install
+
+# 2. Configure environment
+cp .env.example .env.local   # then fill in your keys (table below)
+
+# 3. Create the database tables
+#    Run supabase/migrations/*.sql in order in the Supabase SQL Editor,
+#    or simply:  npm run db:migrate   (needs DATABASE_URL)
+
+# 4. Run
+npm run dev                  # → http://localhost:3000
 ```
 
-### 4. Configure Environment Variables
-Create a `.env.local` file in the root directory based on `.env.example`:
-```bash
-cp .env.example .env.local
-```
+### 🔑 Environment Variables
 
-Fill in your respective credentials:
-```env
-# Supabase Project
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-supabase-publishable-key
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
-DATABASE_URL=postgresql://postgres:password@db.your-project.supabase.co:5432/postgres
+| Variable | Where to get it |
+| :--- | :--- |
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase → Project Settings → API |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` *(or `…_ANON_KEY`)* | Supabase → Project Settings → API |
+| `GEMINI_API_KEY` | [Google AI Studio](https://aistudio.google.com/apikey) (free) |
+| `GROQ_API_KEY` | [Groq Console](https://console.groq.com/keys) (free) |
+| `DATABASE_URL` | Supabase → Settings → Database *(migrations only)* |
+| `SEARCH_API_KEY` + `SEARCH_PROVIDER=tavily` | [Tavily](https://tavily.com) *(optional)* |
 
-# Google Gemini API
-GEMINI_API_KEY=your-gemini-api-key
-GEMINI_MODEL=gemini-1.5-pro
-
-# Groq API
-GROQ_API_KEY=your-groq-api-key
-GROQ_MODEL=llama-3.3-70b-versatile
-```
-
-### 5. Run Database Migrations
-Execute the migrations located in `supabase/migrations/` sequentially in your Supabase SQL Editor, or use the Supabase CLI:
-```bash
-# Apply migrations sequentially:
-20261101_init_schema.sql
-20261102_add_sources_and_response_time.sql
-20261103_add_title_customized.sql
-20261104_add_public_sharing.sql
-20261105_fix_public_share_and_message_security.sql
-```
-
-### 6. Start the Development Server
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+> The app **builds and runs even before keys are configured** (safe placeholder fallbacks) — add real keys for full functionality. Never commit your `.env.local`.
 
 ---
 
-## 🚢 Deployment Guide
+## 📁 Project Structure
 
-### Deploying on Vercel
-1. Push your repository to GitHub.
-2. Import the repository into [Vercel](https://vercel.com/).
-3. Framework Preset: **Next.js**.
-4. Configure all environment variables from `.env.example` in the Vercel Dashboard under **Project Settings -> Environment Variables**.
-5. Click **Deploy**.
-
-### Custom Domain Configuration (e.g. `pragyaai.yslabs.xyz`)
-1. In Vercel, go to **Settings -> Domains** and add `pragyaai.yslabs.xyz`.
-2. Add the corresponding `CNAME` record in your DNS provider:
-   - **Type:** `CNAME`
-   - **Host:** `pragyaai`
-   - **Value:** `cname.vercel-dns.com`
-3. Update **Supabase Dashboard -> Authentication -> URL Configuration**:
-   - **Site URL:** `https://pragyaai.yslabs.xyz`
-   - **Redirect URLs:** 
-     - `https://pragyaai.yslabs.xyz/auth/callback`
-     - `https://pragyaai.yslabs.xyz/reset-password`
+```
+pragya-ai/
+├── src/
+│   ├── app/            # Routes: login, chat (/c/[id]), share pages, API handlers
+│   ├── components/     # ChatDashboard, ChatWorkspace, Sidebar, Modals, MarkdownRenderer
+│   └── lib/            # AI router (Gemini/Groq), personas, sources, supabase, rate-limit
+├── supabase/
+│   └── migrations/     # 5 forward-only SQL migrations (schema, sharing, security fixes)
+├── pragya-*-prompt.txt # The four persona system prompts
+└── .env.example        # Fully commented environment template
+```
 
 ---
 
 ## 🛡️ Security & Privacy
 
-- **Row-Level Security (RLS):** Every PostgreSQL table enforces strict multi-tenant isolation. Messages and attachments can only be accessed or modified by their verified author.
-- **Anti-Enumeration Guard:** Public sharing uses custom database functions preventing unauthorized table dumping.
-- **Provider De-branding:** All underlying AI model names and vendor metadata are sanitized before responses reach the user interface.
-- **Zero Secret Exposure:** Strict `.gitignore` boundaries protect all local `.env` files, certificates, and OAuth JSON secrets from ever reaching git tracking.
+- 🔐 **Server-side auth on every API route** — unauthenticated requests get `401`, no exceptions.
+- 🧱 **Row-Level Security everywhere** — all 7 PostgreSQL tables restrict users strictly to their own data.
+- ⏱️ **Rate limiting** — chat (20 req/min) and uploads (10 req/min) per user, protecting AI provider quotas.
+- 🎟️ **Unguessable share links** — public links use cryptographic random tokens and can be revoked instantly.
+- 🤫 **Zero secret exposure** — no real keys in this repo; `.env.example` carries placeholders only.
 
 ---
 
-## 📜 License & Acknowledgments
+## ✨ Refined Release — Highlights
 
-This project is open-source and distributed under the **MIT License**.
+Hardened and polished after a full hands-on QA review of the live product:
 
-Developed with reverence for the timeless heritage of the Indian Knowledge Systems (IKS) and dedication to modern scientific computation.
+- Next.js upgraded to the latest patched 14.2.x · per-user API rate limiting added
+- Rename, settings-confirmation, sign-out feedback, share-dialog and clipped-header bugs fixed
+- Starter prompts now send on click · persona descriptions unified across login and app
+- Clean first-run experience: builds succeed even before environment setup
 
-**Author:** [Yash Sharma](https://github.com/yash-sharmax)
+---
+
+<div align="center">
+
+## 📜 License
+
+Open-source under the **MIT License** — see [LICENSE](LICENSE).
+
+*Developed with reverence for the timeless heritage of the Indian Knowledge Systems,*
+*and dedication to modern scientific computation.*
+
+**Built by [Yash Sharma](https://github.com/yash-sharmax)** · BTech, Medicaps University
+
+🪔 **[pragyaai.yashx.xyz](https://pragyaai.yashx.xyz)** 🪔
+
+</div>

@@ -5,11 +5,17 @@ import { cleanEnv } from "../utils";
 export function createClient() {
   const cookieStore = cookies();
 
-  const supabaseUrl = cleanEnv(process.env.NEXT_PUBLIC_SUPABASE_URL);
-  const supabaseKey = cleanEnv(
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  );
+  // Placeholder fallbacks keep builds and local runs from crashing when
+  // env vars are not set yet (see client.ts). Real values come from
+  // .env.local / the hosting platform.
+  const supabaseUrl =
+    cleanEnv(process.env.NEXT_PUBLIC_SUPABASE_URL) ||
+    "https://placeholder.supabase.co";
+  const supabaseKey =
+    cleanEnv(
+      process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    ) || "placeholder-anon-key";
 
   return createServerClient(supabaseUrl, supabaseKey, {
     cookies: {

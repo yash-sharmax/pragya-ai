@@ -35,12 +35,12 @@ export function PersonaSelector({ activePersona, onSelectPersona }: PersonaSelec
         <div className="p-1 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
           {getIcon(activePersona)}
         </div>
-        <div className="flex flex-col text-left">
-          <div className="flex items-center gap-1.5 leading-none">
-            <span className="font-semibold text-slate-900 dark:text-white">{current.name}</span>
-            <span className="text-[10px] text-amber-600 dark:text-amber-400 font-medium">({current.sanskritName})</span>
+        <div className="flex flex-col text-left min-w-0 max-w-[44vw] sm:max-w-[220px] md:max-w-none">
+          <div className="flex items-center gap-1.5 leading-none min-w-0">
+            <span className="font-semibold text-slate-900 dark:text-white truncate">{current.name}</span>
+            <span className="text-[10px] text-amber-600 dark:text-amber-400 font-medium hidden md:inline">({current.sanskritName})</span>
           </div>
-          <span className="text-[10px] text-slate-400 font-normal leading-tight mt-0.5 hidden sm:inline">
+          <span className="text-[10px] text-slate-400 font-normal leading-tight mt-0.5 hidden sm:block truncate">
             {current.tagline}
           </span>
         </div>

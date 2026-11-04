@@ -226,11 +226,13 @@ export function MessageBubble({ message, personaId, onRetry }: MessageBubbleProp
             ) : (
               <div className="min-w-0 overflow-hidden relative">
                 {/* Ancient Folio Decorative Marginal Accent */}
-                <div className="hidden sm:block absolute -top-2 right-0 text-[10px] text-amber-800/40 dark:text-amber-500/40 font-serif select-none pointer-events-none">
+                <div className="hidden sm:block absolute top-0 right-0 pt-0.5 text-[10px] leading-relaxed text-amber-800/40 dark:text-amber-500/40 font-serif select-none pointer-events-none">
                   ॥ {persona.sanskritName} ॥
                 </div>
 
-                <MarkdownRenderer content={message.content} />
+                <div className="sm:pt-4">
+                  <MarkdownRenderer content={message.content} />
+                </div>
 
                 {/* Animated Traditional Indian Kalam Writing Instrument */}
                 {isStreaming && (

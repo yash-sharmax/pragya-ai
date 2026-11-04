@@ -641,9 +641,12 @@ export function ChatDashboard({ initialConversationId }: ChatDashboardProps) {
         setConversations((prev) =>
           prev.map((c) => (c.id === id ? { ...c, title: newTitle } : c))
         );
+        return true;
       }
+      return false;
     } catch (err) {
       console.error("Rename conversation error:", err);
+      return false;
     }
   };
 

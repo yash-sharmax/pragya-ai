@@ -93,6 +93,20 @@ export function ChatWorkspace({
     }
   };
 
+  // Starter suggestion pills send immediately, like in mainstream chat apps,
+  // instead of only filling the input box.
+  const handleStarterPrompt = async (prompt: string) => {
+    if (loading || uploadingImage) return;
+    setInput("");
+    setErrorMessage(null);
+    try {
+      await onSendMessage(prompt, null);
+    } catch (err: any) {
+      setErrorMessage(err.message || "Failed to send message.");
+      setInput(prompt);
+    }
+  };
+
   // Persona starter questions rooted deeply in IKS + Modern Science
   const starterPrompts: Record<PersonaId, string[]> = {
     veda: [
@@ -164,6 +178,9 @@ export function ChatWorkspace({
         {conversationLoading ? (
           /* Loading Conversation Skeleton (prevents flashing welcome screen) */
           <div className="space-y-6 py-4 animate-pulse">
+            <p className="text-center text-xs font-medium text-amber-800/60 dark:text-amber-200/50">
+              Loading conversation…
+            </p>
             <div className="flex justify-end">
               <div className="w-2/3 sm:w-1/2 h-14 bg-amber-200/40 dark:bg-amber-950/40 rounded-2xl rounded-tr-none border border-amber-300/30" />
             </div>
@@ -200,7 +217,8 @@ export function ChatWorkspace({
                 <button
                   key={i}
                   type="button"
-                  onClick={() => setInput(prompt)}
+                  disabled={loading || uploadingImage}
+                  onClick={() => handleStarterPrompt(prompt)}
                   className="p-3.5 rounded-xl border border-amber-300/60 dark:border-amber-800/50 bg-[#fbf7ee] dark:bg-[#1a130e] hover:bg-amber-100/60 dark:hover:bg-[#231a13] hover:border-amber-400 dark:hover:border-amber-700 text-stone-800 dark:text-[#f0e8dc] text-xs text-left transition-all shadow-sm flex items-center justify-between group active:scale-[0.99] cursor-pointer"
                 >
                   <span className="leading-snug">{prompt}</span>

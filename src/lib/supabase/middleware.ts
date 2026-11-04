@@ -7,11 +7,14 @@ export async function updateSession(request: NextRequest) {
     request,
   });
 
-  const supabaseUrl = cleanEnv(process.env.NEXT_PUBLIC_SUPABASE_URL);
-  const supabaseKey = cleanEnv(
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  );
+  const supabaseUrl =
+    cleanEnv(process.env.NEXT_PUBLIC_SUPABASE_URL) ||
+    "https://placeholder.supabase.co";
+  const supabaseKey =
+    cleanEnv(
+      process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    ) || "placeholder-anon-key";
 
   const supabase = createServerClient(supabaseUrl, supabaseKey, {
     cookies: {
