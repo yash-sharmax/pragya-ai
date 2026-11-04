@@ -30,8 +30,15 @@ export function SettingsModal({ open, onClose, settings, onSaveSettings }: Setti
   // Sync form state when modal opens or settings update
   useEffect(() => {
     setForm(settings);
-    if (open) setSavedSuccess(false);
   }, [settings, open]);
+
+  // Clear any previous "saved" confirmation only when the modal is
+  // (re)opened. This must NOT run when `settings` changes: a successful
+  // save updates settings, and resetting here would instantly wipe the
+  // confirmation that handleSave just set.
+  useEffect(() => {
+    if (open) setSavedSuccess(false);
+  }, [open ]);
 
   // Handle Escape key to close
   useEffect(() => {
